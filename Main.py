@@ -13,3 +13,15 @@ name ="Sadek"
 async def get_root(request: Request):
     return templates.TemplateResponse("index.html", {"request": request, "name": name, "skills": skills})
 
+@app.get("/contact", response_class=HTMLResponse)
+async def get_contact(request: Request):
+    return templates.TemplateResponse("contact.html", {"request": request})
+
+
+
+@app.post("/contact", response_class=HTMLResponse)
+async def post_contact(request: Request):
+    return templates.TemplateResponse("response.html", {"request": request})
+
+
+
