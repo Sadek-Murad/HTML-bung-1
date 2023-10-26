@@ -5,4 +5,11 @@ from fastapi.templating import Jinja2Templates
 
 app = FastAPI()
 
-app.mount("/static", StaticFiles(directory="static"), name="static")
+templates = Jinja2Templates(directory="templates")
+skills=["GIT", "Python", "HTML"]
+name ="Sadek"
+
+@app.get("/" , response_class=HTMLResponse)
+async def get_root(request: Request):
+    return templates.TemplateResponse("index.html", {"request": request, "name": name, "skills": skills})
+

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <header>
-    <h1>Murad</h1>
+    <h1>{{Name}}</h1>
     <h2>Deine “Devops” Rolle</h2>
     <nav>
         <ul>
@@ -21,9 +21,9 @@
         <h3>Skills</h3>
         <p>Ich arbeite jeden Tag mit disen Tools</p>
         <ul>
-            <li>Git Hub</li>
-            <li>Python</li>
-            <li>HTML</li>
+           {%for skill in skills%}
+            <li>{{skill}}</li>
+            {% endfor %}
         </ul>
     </section>
   
